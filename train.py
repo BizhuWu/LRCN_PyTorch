@@ -1,5 +1,5 @@
 from LoadUCF101DataByTorch import trainset_loader, testset_loader
-from model import LCRN
+from model import LRCN
 import torch
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
@@ -22,7 +22,7 @@ print(device)
 
 
 
-model = LCRN().to(device)
+model = LRCN().to(device)
 
 
 
