@@ -6,9 +6,9 @@ import config
 
 
 
-class LCRN(nn.Module):
+class LRCN(nn.Module):
     def __init__(self):
-        super(LCRN, self).__init__()
+        super(LRCN, self).__init__()
 
         # define the CNN part
         self.featureExtractor = models.alexnet(pretrained=True)
@@ -55,7 +55,7 @@ class LCRN(nn.Module):
 
 
 if __name__ == '__main__':
-    model = LCRN()
+    model = LRCN()
     frames = torch.rand(config.BATCH_SIZE, 3, config.seq_length, 227, 227)
     output = model(frames)
 
