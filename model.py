@@ -39,15 +39,12 @@ class LRCN(nn.Module):
         # x is the output of lstm：(batch, seq_len, input_size)
         x, _ = self.lstm(frameFeatures)
 
-        batch_size, seq_length, hidden_size = x.size()
-        x = x.reshape(-1, hidden_size)
-
+        # input's dimension: (batch_size, seq_length, hidden_size)
+        # output's dimension: (batch_size, seq_length, classNum)
         x = self.linearLayer(x)
 
-        # x：(batch, seq_length, class_Num)
-        x = x.view(batch_size, seq_length, -1)              # (seq_length, batch_size, classNum)
-
-        # x：(batch, class_Num)
+        # get frame-wise's mean
+        # output's dimension：(batch, class_Num)
         x = torch.mean(x, dim=1)
 
         return x
