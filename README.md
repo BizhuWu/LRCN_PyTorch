@@ -9,7 +9,7 @@ The LRCN's paper：Long-term Recurrent Convolutional Networks for Visual Recogni
 ## Performance
 Accuracy     | 
 :-----------:|
--- Still Training Now --  |
+-- 62.43% --  |
 
 &nbsp;
 
